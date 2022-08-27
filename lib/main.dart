@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
         minTextAdapt: true,
-        designSize: const Size(414, 896),
+        designSize: const Size(360, 780),
         builder: (context, _) {
           return MaterialApp.router(
             routeInformationProvider: routes.routeInformationProvider,

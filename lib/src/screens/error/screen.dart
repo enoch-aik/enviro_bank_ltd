@@ -29,7 +29,14 @@ class ErrorScreen extends StatelessWidget {
                   color: CustomColors.appColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.r)),
-                  child: const Center(child: Text('GO HOME')),
+                  child: Center(
+                      child: Padding(
+                        padding:  EdgeInsets.symmetric(horizontal: 8.w),
+                        child: KText(
+                    'GO HOME',
+                    color: CustomColors.mainYellow,
+                  ),
+                      )),
                 ),
               ),
             )

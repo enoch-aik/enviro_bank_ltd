@@ -1,6 +1,5 @@
 import 'package:enviro_bank_ltd/export.dart';
 
-
 Widget kTextButton(
     {required onTap,
     required title,
@@ -45,12 +44,12 @@ Widget kOutlinedButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(buttonColor),
           side: MaterialStateProperty.all(BorderSide(
-              width: 0.5, color: borderColor ?? CustomColors.appColor)),
+              width: 0.5, color: borderColor ?? CustomColors.mainYellow)),
         ),
         onPressed: onTap,
         child: KText(
           title,
-          color: textColor ?? CustomColors.appColor,
+          color: textColor ?? CustomColors.mainYellow,
           fontSize: fontSize ?? 17.sp,
           fontWeight: fontWeight ?? FontWeight.w400,
         )),

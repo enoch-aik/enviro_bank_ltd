@@ -38,19 +38,21 @@ ThemeData customTheme = ThemeData(
             fontSize: 15.sp, color: CustomColors.textColorLight2),
         /*alignLabelWithHint: true,*/
         hintStyle: GoogleFonts.poppins(
-            fontSize: 15.sp, color: CustomColors.textColorLight2),
+            fontSize: 13.sp, color: CustomColors.textColorLight2),
         fillColor: CustomColors.secBackgroundColor,
         filled: true,
         labelStyle: GoogleFonts.poppins(
-            fontSize: 15.sp, color: CustomColors.textColorLight2),
+            fontSize: 13.sp, color: CustomColors.textColorLight2),
+        errorStyle:
+        GoogleFonts.poppins(fontSize: 11.sp, color: Colors.red),
         helperStyle:
-            GoogleFonts.poppins(fontSize: 12.sp, color: CustomColors.appColor),
+            GoogleFonts.poppins(fontSize: 10.sp, color: CustomColors.textColorDefault),
         disabledBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 0.25, color: CustomColors.disabledText),
           borderRadius: BorderRadius.circular(5.r),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(width: 0.5, color: CustomColors.mainYellow),
+          borderSide: BorderSide(width: 0.5, color: CustomColors.appColor),
           borderRadius: BorderRadius.circular(5.r),
         ),
         errorBorder: OutlineInputBorder(

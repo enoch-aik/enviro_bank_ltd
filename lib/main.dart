@@ -3,7 +3,8 @@ import 'package:enviro_bank_ltd/src/res/theme.dart';
 import 'package:enviro_bank_ltd/src/router/router.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

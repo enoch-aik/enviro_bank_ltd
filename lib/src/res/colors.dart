@@ -11,6 +11,7 @@ class CustomColors {
   //Other colors
   static Color appColor = const Color(0xff002653);
   static Color secBackgroundColor = const Color(0xffF3F5F6);
+  static Color secondaryColor = const Color(0xff023047);
   static Color mainYellow = const Color(0xffFFD54E);
   static Color lightOrange = const Color(0xffFFC583);
   static Color primaryColorBlue = const Color(0xffCCD6DA);

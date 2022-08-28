@@ -20,7 +20,7 @@ Widget kTextButton(
       child: KText(
         title,
         color: textColor ?? CustomColors.white,
-        fontSize: fontSize ?? 17.sp,
+        fontSize: fontSize ?? 16.sp,
         fontWeight: fontWeight ?? FontWeight.w400,
       ),
     ),
@@ -44,13 +44,13 @@ Widget kOutlinedButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(buttonColor),
           side: MaterialStateProperty.all(BorderSide(
-              width: 0.5, color: borderColor ?? CustomColors.mainYellow)),
+              width: 1, color: borderColor ?? CustomColors.mainYellow)),
         ),
         onPressed: onTap,
         child: KText(
           title,
           color: textColor ?? CustomColors.mainYellow,
-          fontSize: fontSize ?? 17.sp,
+          fontSize: fontSize ?? 16.sp,
           fontWeight: fontWeight ?? FontWeight.w400,
         )),
   );
@@ -74,7 +74,7 @@ Widget kElevatedButton({
         child: KText(
           title,
           color: textColor ?? CustomColors.white,
-          fontSize: fontSize ?? 17.sp,
+          fontSize: fontSize ?? 16.sp,
           fontWeight: fontWeight ?? FontWeight.w400,
         )),
   );

@@ -51,7 +51,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             pageIndicator(),
             Padding(
               padding: EdgeInsets.only(top: 100.h, bottom: 16.h),
-              child: kTextButton(onTap: () {}, title: 'Get Started'),
+              child: kElevatedButton(onTap: () { context.replace('/signup');}, title: 'Get Started'),
             ),
             kOutlinedButton(
                 onTap: () {

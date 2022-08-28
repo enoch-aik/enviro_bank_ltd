@@ -15,22 +15,29 @@ class AuthenticationProvider extends ChangeNotifier {
 
   Future signUp({required Map data}) async {
     try {
+      _responseMessage = '';
       Response response = await _dio.post('$baseUrl/users',
           data: data, options: _defaultOption);
-      print(response.data);
+
       if (response.statusCode == 200) {
         _result = 'success';
       }
     } on DioError catch (_) {
-      print(_);
+      _result = 'failed';
     }
   }
 
   Future login({required Map data}) async {
-    Response response = await _dio.post('$baseUrl/users/login',
-        data: data, options: _defaultOption);
-    if (response.statusCode == 200) {
-      print(response.data);
+    try {
+      _responseMessage = '';
+      Response response = await _dio.post('$baseUrl/users/login',
+          data: data, options: _defaultOption);
+      if (response.statusCode == 200) {
+        _result = 'success';
+        _responseMessage = response.data['jwt'];
+      }
+    } on DioError catch (_) {
+      _result = 'failed';
     }
   }
 }

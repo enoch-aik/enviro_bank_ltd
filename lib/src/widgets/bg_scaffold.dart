@@ -63,8 +63,11 @@ class BScaffold extends ConsumerWidget {
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(50.r),
                           topLeft: Radius.circular(50.r))),
-                  child: SingleChildScrollView(
-                    child: body,
+                  child: Padding(
+                    padding:  EdgeInsets.only(top: 10.h),
+                    child: SingleChildScrollView(
+                      child: body,
+                    ),
                   ),
                 ),
               )),

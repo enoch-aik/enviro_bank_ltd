@@ -1,8 +1,11 @@
 import 'package:enviro_bank_ltd/app/models/user.dart';
 import 'package:enviro_bank_ltd/core/providers/auth.dart';
+import 'package:enviro_bank_ltd/core/providers/db.dart';
 import 'package:enviro_bank_ltd/export.dart';
+import 'package:enviro_bank_ltd/src/widgets/alert_dialog.dart';
 import 'package:enviro_bank_ltd/src/widgets/bg_scaffold.dart';
 import 'package:enviro_bank_ltd/src/widgets/buttons.dart';
+import 'package:enviro_bank_ltd/src/widgets/loading_dialog.dart';
 import 'package:enviro_bank_ltd/src/widgets/textfields/email.dart';
 import 'package:enviro_bank_ltd/src/widgets/textfields/password.dart';
 
@@ -51,12 +54,34 @@ class SignUpScreen extends ConsumerWidget {
                 child: kElevatedButton(
                     onTap: () async {
                       if (signupKey.currentState!.validate()) {
-                        //authentication provider
+                        //Authentication provider
                         final auth = ref.read(authProvider);
+                        final db = ref.read(databaseProvider);
                         User newUser = User(
                             emailAddress: emailController.text.trim(),
                             password: passwordController.text.trim());
-                        await auth.signUp(data: newUser.toJson());
+                        showLoadingDialog(context);
+                        await auth
+                            .signUp(data: newUser.toJson())
+                            .timeout(const Duration(seconds: 7), onTimeout: () {
+                          Navigator.pop(context);
+                          showMessageAlertDialog(context,
+                              text: 'Oops! Signup failed, try again');
+                        }).then((value) async {
+                          if (auth.result == 'success') {
+                            db.saveEmail(email: emailController.text);
+                            db.savePassword(password: passwordController.text);
+                            Navigator.pop(context);
+                            context.replace('/home');
+                            showMessageAlertDialog(context,
+                                text:
+                                    'Congratulations!, your account has been created successfully');
+                          } else {
+                            Navigator.pop(context);
+                            showMessageAlertDialog(context,
+                                text: 'Failed to create account, try again');
+                          }
+                        });
                         //Log user in
                       }
                     },

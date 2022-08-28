@@ -1,6 +1,8 @@
 import 'package:enviro_bank_ltd/app/models/user.dart';
 import 'package:enviro_bank_ltd/core/providers/auth.dart';
+import 'package:enviro_bank_ltd/core/providers/db.dart';
 import 'package:enviro_bank_ltd/export.dart';
+import 'package:enviro_bank_ltd/src/widgets/alert_dialog.dart';
 import 'package:enviro_bank_ltd/src/widgets/bg_scaffold.dart';
 import 'package:enviro_bank_ltd/src/widgets/buttons.dart';
 import 'package:enviro_bank_ltd/src/widgets/loading_dialog.dart';
@@ -79,16 +81,40 @@ class LoginScreen extends ConsumerWidget {
                 child: kTextButton(
                     onTap: () async {
                       if (loginKey.currentState!.validate()) {
-                        //authentication provider
+                        //authentication and database provider
                         final auth = ref.read(authProvider);
-                        User newUser = User(
+                        final db = ref.read(databaseProvider);
+                        //user login details ==> convert to map for api
+                        User user = User(
                             emailAddress: emailController.text.trim(),
                             password: passwordController.text.trim());
                         showLoadingDialog(context);
+                        //try login
                         await auth
-                            .login(data: newUser.toJson())
-                            .timeout(Duration(seconds: 10), onTimeout: () {
-                          Navigator.pop(context);
+                            .login(data: user.toJson())
+                            .timeout(const Duration(seconds: 8),
+                                // is it takes long to query
+                                onTimeout: () {
+                        }).then((value) async {
+                          //if successful
+                          if (auth.result == 'success') {
+                            //save user's token to local storage
+                            db.saveToken(token: auth.responseMessage);
+                            //if user wants to be remembered, saved username and password for future login
+                            if (rememberMe.value == true) {
+                              db.saveEmail(email: emailController.text);
+                              db.savePassword(
+                                  password: passwordController.text);
+                            }
+                            Navigator.pop(context);
+                            context.replace('/home');
+                          }
+                          // if login fails
+                          else {
+                            Navigator.pop(context);
+                            showMessageAlertDialog(context,
+                                text: 'Oops! Login failed, try again');
+                          }
                         });
 
                         //Log user in

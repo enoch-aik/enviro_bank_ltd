@@ -42,7 +42,6 @@ dependencies:
   flutter_riverpod: ^1.0.4
   dio: ^4.0.6
   intl: ^0.17.0
-  freezed: ^2.1.0+1
   shared_preferences: ^2.0.15
   animate_do: ^2.1.0
 

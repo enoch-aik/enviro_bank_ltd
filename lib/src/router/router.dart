@@ -3,6 +3,7 @@ import 'package:enviro_bank_ltd/src/screens/auth/login/screen.dart';
 import 'package:enviro_bank_ltd/src/screens/auth/signup/screen.dart';
 import 'package:enviro_bank_ltd/src/screens/error/screen.dart';
 import 'package:enviro_bank_ltd/src/screens/home/screen.dart';
+import 'package:enviro_bank_ltd/src/screens/loan/screen.dart';
 import 'package:enviro_bank_ltd/src/screens/onboarding/screen.dart';
 import 'package:enviro_bank_ltd/src/screens/splash/screen.dart';
 
@@ -35,6 +36,12 @@ final GoRouter routes = GoRouter(routes: <GoRoute>[
     path: '/signup',
     builder: (BuildContext context, GoRouterState state) {
       return const SignUpScreen();
+    },
+  ),
+  GoRoute(
+    path: '/loan',
+    builder: (BuildContext context, GoRouterState state) {
+      return const LoanScreen();
     },
   ),
 ], errorBuilder: (context, state) => ErrorScreen(error: state.error));

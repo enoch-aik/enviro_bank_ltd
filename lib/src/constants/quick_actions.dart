@@ -2,7 +2,7 @@ import 'package:enviro_bank_ltd/export.dart';
 
 List<Color> quickOptionColors = [
   Colors.green,
-  Colors.redAccent,
+  Colors.amberAccent,
   CustomColors.appColor,
   Colors.purple
 ];

@@ -29,7 +29,7 @@ class KText extends StatelessWidget {
       overflow: overflow,
       style: GoogleFonts.poppins().copyWith(
           decoration: decoration,
-          fontSize: fontSize ?? 16.sp,
+          fontSize: fontSize ?? 14.sp,
           fontWeight: fontWeight ?? FontWeight.w300,
           color: color ?? CustomColors.textColorDefault,
           height: lineHeight),

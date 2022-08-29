@@ -3,3 +3,4 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final ChangeNotifierProvider<LoanApi> loanProvider =
     ChangeNotifierProvider((ref) => LoanApi());
+final FutureProvider futureLoanProvider = FutureProvider((ref) => LoanApi().getAllLoans());

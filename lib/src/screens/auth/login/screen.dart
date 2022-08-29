@@ -17,7 +17,7 @@ class LoginScreen extends ConsumerWidget {
     //Form key to validate user input
     GlobalKey<FormState> loginKey = GlobalKey();
     //Checkbox
-    ValueNotifier<bool> rememberMe = ValueNotifier<bool>(false);
+    ValueNotifier<bool> rememberMe = ValueNotifier<bool>(true);
     //Textfield controllers
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();

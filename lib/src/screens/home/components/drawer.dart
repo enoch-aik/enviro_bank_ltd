@@ -26,6 +26,7 @@ class FancyDrawer extends ConsumerWidget {
                     onTap: () => FancyZoomDrawer.of(context)!.toggle(),
                     name: 'Home',
                     icon: Icons.home),
+                //Apply for loans
                 ListTile(
                   title: KText(
                     'Apply for loan',
@@ -33,9 +34,37 @@ class FancyDrawer extends ConsumerWidget {
                   ),
                   leading: SvgPicture.asset('assets/svg/cash.svg',
                       color: CustomColors.white, width: 25.w),
-                  onTap: () {context.push('/loan');},
+                  onTap: () {
+                    context.push('/loan');
+                  },
                 ),
-
+                //View Loans
+                ListTile(
+                  title: KText(
+                    'Loan history',
+                    color: CustomColors.white,
+                  ),
+                  leading: SvgPicture.asset('assets/svg/history.svg',
+                      color: CustomColors.white, width: 25.w),
+                  onTap: () {
+                    context.push('/loan_history');
+                  },
+                ),
+                //Change password
+                ListTile(
+                  title: KText(
+                    'Change password',
+                    color: CustomColors.white,
+                  ),
+                  leading: Icon(
+                    Icons.lock_open,
+                    color: CustomColors.white,
+                    size: 30.w,
+                  ),
+                  onTap: () {
+                    context.push('/change_password');
+                  },
+                ),
                 Padding(
                   padding: EdgeInsets.only(top: 100.h),
                   child: Consumer(builder: (context, ref, child) {

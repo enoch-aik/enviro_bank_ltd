@@ -47,8 +47,8 @@ class LoanScreen extends ConsumerWidget {
               Padding(
                 padding: EdgeInsets.only(top: 8.h, bottom: 32.h),
                 child: KText(
-                  'Kindly input your details to Log-in',
-                  fontSize: 16.sp,
+                  'Input your details to process your loan',
+                  fontSize: 15.sp,
                   color: CustomColors.appColor,
                 ),
               ),

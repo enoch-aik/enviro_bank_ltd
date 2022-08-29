@@ -1,14 +1,14 @@
 import 'package:enviro_bank_ltd/core/validators/validators.dart';
 import 'package:enviro_bank_ltd/export.dart';
 
-class NameField extends StatelessWidget {
+class AccountNumber extends StatelessWidget {
   final String labelText;
   final bool? enabled;
   final Widget? prefixIcon;
   final int? maxLines;
   final TextEditingController controller;
 
-  const NameField({
+  const AccountNumber({
     Key? key,
     required this.controller,
     required this.labelText,
@@ -28,19 +28,19 @@ class NameField extends StatelessWidget {
           enabled: enabled ?? true,
 
           //textAlignVertical: TextAlignVertical.top,
-          keyboardType: TextInputType.name,
+          keyboardType: TextInputType.number,
           validator: (value) {
-            RegExp nameExp = Validators.nameExp;
 
             if (value!.isEmpty) {
               return 'This field is required';
-            } else if (!nameExp.hasMatch(value)) {
-              return 'This name is not valid';
+            } else if (value.length < 10) {
+              return 'Invalid phone number';
             }
 
             return null;
           },
           maxLines: maxLines ?? 1,
+          maxLength: 10,
           decoration: InputDecoration(
             alignLabelWithHint: true,
             contentPadding: EdgeInsets.only(top: 5.h, left: 15.w),

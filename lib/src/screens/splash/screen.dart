@@ -29,7 +29,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return KScaffold(
+    return KScaffold(backgroundColor: CustomColors.mainYellow,
       body: Center(
         child: Bounce(
           infinite: true,

@@ -33,7 +33,7 @@ class FancyDrawer extends ConsumerWidget {
                   ),
                   leading: SvgPicture.asset('assets/svg/cash.svg',
                       color: CustomColors.white, width: 25.w),
-                  onTap: () {},
+                  onTap: () {context.push('/loan');},
                 ),
 
                 Padding(

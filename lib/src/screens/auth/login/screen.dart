@@ -94,8 +94,8 @@ class LoginScreen extends ConsumerWidget {
                             .login(data: user.toJson())
                             .timeout(const Duration(seconds: 8),
                                 // is it takes long to query
-                                onTimeout: () {
-                        }).then((value) async {
+                                onTimeout: () {})
+                            .then((value) async {
                           //if successful
                           if (auth.result == 'success') {
                             //save user's token to local storage

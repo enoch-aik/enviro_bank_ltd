@@ -1,6 +1,5 @@
 import 'package:enviro_bank_ltd/export.dart';
 
-
 class HomeCard extends StatelessWidget {
   const HomeCard({Key? key}) : super(key: key);
 
@@ -48,7 +47,7 @@ class HomeCard extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.h),
                 child: InkWell(
                   onTap: () {
-
+                    context.push('/loan');
                   },
                   child: Container(
                     width: 130.w,
@@ -81,4 +80,3 @@ class HomeCard extends StatelessWidget {
     );
   }
 }
-

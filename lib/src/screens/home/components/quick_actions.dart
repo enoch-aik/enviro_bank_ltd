@@ -9,14 +9,14 @@ Widget quickActions(context,
     required String description}) {
   return InkWell(
     onTap: () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) =>const ComingSoonScreen()));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const ComingSoonScreen()));
     },
     child: Container(
       width: 170.w,
       padding: EdgeInsets.all(10.w),
       decoration: BoxDecoration(
-          color: color.withOpacity(0.2),
+          color: color.withOpacity(0.7),
           borderRadius: BorderRadius.circular(10.r)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,19 +24,18 @@ Widget quickActions(context,
           SvgPicture.asset(
             'assets/svg/$iconName.svg',
             width: 35.w,
-            color: color,
+            color: CustomColors.appColor,
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 5.h),
             child: KText(
               title,
-              color: CustomColors.black,
+              color: CustomColors.appColor,
               fontWeight: FontWeight.w600,
             ),
           ),
           KText(
             description,
-            color: color,
             fontSize: 12.sp,
           ),
         ],

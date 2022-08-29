@@ -8,11 +8,16 @@ class LoanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BScaffold(
       appBar: AppBar(
-        title: const KText('Application Form'),foregroundColor: CustomColors.appColor,
+        title: KText('Application Form',
+            color: CustomColors.white, fontSize: 18.sp),
+        foregroundColor: CustomColors.white,
       ),
-      body: SingleChildScrollView(child: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.w),
-        child: Column(children: [],),
+      body: SingleChildScrollView(
+          child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: Column(
+          children: [],
+        ),
       )),
     );
   }

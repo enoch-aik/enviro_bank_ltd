@@ -47,7 +47,7 @@ class HomeCard extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.h),
                 child: InkWell(
                   onTap: () {
-                    context.go('/loan');
+                    context.push('/loan');
                   },
                   child: Container(
                     width: 130.w,

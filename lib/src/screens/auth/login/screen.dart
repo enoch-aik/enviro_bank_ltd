@@ -38,7 +38,7 @@ class LoginScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               KText(
-                'Welcome Back!',
+                'Welcome!',
                 fontSize: 17.sp,
                 fontWeight: FontWeight.w600,
               ),

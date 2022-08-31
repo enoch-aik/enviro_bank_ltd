@@ -2,7 +2,6 @@ import 'package:enviro_bank_ltd/app/models/user.dart';
 import 'package:enviro_bank_ltd/core/db/database.dart';
 import 'package:enviro_bank_ltd/core/providers/auth.dart';
 import 'package:enviro_bank_ltd/export.dart';
-import 'package:enviro_bank_ltd/src/screens/auth/login/screen.dart';
 import 'package:enviro_bank_ltd/src/widgets/alert_dialog.dart';
 import 'package:enviro_bank_ltd/src/widgets/bg_scaffold.dart';
 import 'package:enviro_bank_ltd/src/widgets/buttons.dart';
@@ -58,10 +57,8 @@ class FinalPasswordChangeScreen extends ConsumerWidget {
                                 text:
                                     'Password change successfully, Login to continue',
                                 isDismissible: false, onTap: () {
-                              Navigator.pushAndRemoveUntil(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return const LoginScreen();
-                              }), (route) => false);
+                              Navigator.pop(context);
+                              context.go('/login');
                             });
                           } else {
                             Navigator.pop(context);

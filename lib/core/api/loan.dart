@@ -32,7 +32,6 @@ class LoanApi extends ChangeNotifier {
         notifyListeners();
       }
     } on DioError catch (_) {
-      print(_);
       _result = 'failed';
       notifyListeners();
     }
@@ -69,7 +68,6 @@ class LoanApi extends ChangeNotifier {
         return _totalLoan;
       }
     } on DioError catch (_) {
-      print(_);
       _result = 'failed';
     }
   }

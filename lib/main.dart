@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
             routeInformationProvider: routes.routeInformationProvider,
             routeInformationParser: routes.routeInformationParser,
             routerDelegate: routes.routerDelegate,
-            title: 'Valor',
+            title: 'Enviro',
             debugShowCheckedModeBanner: false,
             theme: customTheme,
           );

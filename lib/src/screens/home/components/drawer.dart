@@ -39,7 +39,7 @@ class FancyDrawer extends ConsumerWidget {
                   },
                 ),
                 //View Loans
-                ListTile(
+               /* ListTile(
                   title: KText(
                     'Loan history',
                     color: CustomColors.white,
@@ -49,7 +49,7 @@ class FancyDrawer extends ConsumerWidget {
                   onTap: () {
                     context.push('/loan_history');
                   },
-                ),
+                ),*/
                 //Change password
                 ListTile(
                   title: KText(

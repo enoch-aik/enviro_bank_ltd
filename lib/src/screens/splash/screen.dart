@@ -34,7 +34,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
         child: Bounce(
           infinite: true,
           child: Text(
-            'LOGO',
+            'ENVIRO BANK',
             style: TextStyle(
                 color: CustomColors.appColor,
                 fontWeight: FontWeight.w600,
